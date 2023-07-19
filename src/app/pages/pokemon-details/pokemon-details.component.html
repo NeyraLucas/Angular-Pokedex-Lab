@@ -1,0 +1,27 @@
+<ng-container *ngIf="pokemonResponse$ | async as pokemon">
+  <mat-card class="example-card">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>{{ pokemon.name }}</mat-card-title>
+      <mat-card-subtitle>ID #{{ pokemon.id }}</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image [src]="pokemon.sprites.front_default" />
+    <mat-card-content>
+      <p><span class="bold__text">Height</span> {{ pokemon.height }}</p>
+      <p>
+        <span class="bold__text">Abilities</span>
+        <ng-container *ngIf="pokemon.abilities">
+          <span class="button-3" *ngFor="let item of pokemon.abilities">{{ item.ability.name }}</span>
+        </ng-container>
+      </p>
+      <p>
+        <span class="bold__text">Type</span>
+        <ng-container *ngIf="pokemon.abilities">
+          <span class="button-3" *ngFor="let item of pokemon.types">{{ item.type.name }}</span>
+        </ng-container>
+      </p>
+      <p><span class="bold__text">Weight</span> {{ pokemon.weight }}</p>
+      <p><span class="bold__text">Weight</span> {{ pokemon.weight }}</p>
+    </mat-card-content>
+  </mat-card>
+</ng-container>

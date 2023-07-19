@@ -1,0 +1,10 @@
+<div class="nav__contianer">
+  <nav>
+    <a routerLink="home" class="title">Pokedex</a>
+    <ul>
+      <li *ngFor="let link of links">
+        <button [routerLink]="link.routerLink" routerLinkActive="active" mat-raised-button color="primary">{{ link.text }}</button>
+      </li>
+    </ul>
+  </nav>
+</div>
